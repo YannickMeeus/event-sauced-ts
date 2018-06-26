@@ -11,12 +11,14 @@ describe('Given a set of engines to test against', () => {
   const engineFactories: (() => IStorageEngine)[] = [() => new InMemoryStorageEngine()]
 
   const newGuid = () => uuid.v4()
+
   engineFactories.forEach(getEngine => {
+    const engine = getEngine()
+
     const getStore = async () => {
-      await getEngine().initialise()
+      await engine.initialise()
       return new EventStore(engine)
     }
-    const engine = getEngine()
     describe('When appending to a new stream', () => {
       describe('And the stream id is invalid', () => {
         const invalidStreamIds = [undefined, null, '', ' ']
