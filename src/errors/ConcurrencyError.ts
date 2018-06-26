@@ -1,0 +1,1 @@
+class ConcurrencyError extends Error {}
