@@ -70,7 +70,7 @@
         "statements": 95
       }
     },
-    "collectCoverage": true
+    "collectCoverage": false
   },
   "prettier": {
     "semi": false,
@@ -79,6 +79,7 @@
   "devDependencies": {
     "@types/jest": "^22.0.0",
     "@types/node": "^10.0.3",
+    "@types/uuid": "^3.4.3",
     "colors": "^1.1.2",
     "commitizen": "^2.9.6",
     "coveralls": "^3.0.0",
@@ -106,6 +107,7 @@
     "tslint-config-standard": "^7.0.0",
     "typedoc": "^0.11.0",
     "typescript": "^2.6.2",
+    "uuid": "^3.2.1",
     "validate-commit-msg": "^2.12.2"
   },
   "dependencies": {}

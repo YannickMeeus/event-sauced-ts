@@ -1,8 +1,13 @@
 import { IStorageEngine } from '../IStorageEngine'
 import { StorageEvent } from '../StorageEvent'
+import { ConcurrencyError } from '../errors/ConcurrencyError'
 
 class InMemoryStorageEngine implements IStorageEngine {
-  constructor(private readonly streams: Map<string, StorageEvent[]>) {}
+  private readonly streams: Map<string, StorageEvent[]>
+
+  constructor() {
+    this.streams = new Map<string, StorageEvent[]>()
+  }
 
   public async appendToStream(streamId: string, events: StorageEvent[]): Promise<void> {
     if (!this.streams.has(streamId)) {
@@ -17,8 +22,8 @@ class InMemoryStorageEngine implements IStorageEngine {
         } : Actual revision ${this.streams.get(streamId)!.length}"`
       )
     }
-
-    this.streams.set(streamId, events)
+    const stream = this.streams.get(streamId)!.concat(events)
+    this.streams.set(streamId, stream)
   }
 
   public async readStreamForwards(
@@ -29,11 +34,13 @@ class InMemoryStorageEngine implements IStorageEngine {
     if (!this.streams.has(streamId)) {
       return []
     }
-
-    return this.streams.get(streamId)!.slice(startPosition, startPosition + numberOfEvents)
+    const index = startPosition <= 0 ? 0 : startPosition - 1
+    return this.streams.get(streamId)!.slice(index, startPosition + numberOfEvents)
   }
 
   public async initialise(): Promise<IStorageEngine> {
     return this
   }
 }
+
+export { InMemoryStorageEngine }

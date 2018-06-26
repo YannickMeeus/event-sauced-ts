@@ -1,9 +1,12 @@
 import { NullableString } from '../types'
+import { ArgumentError } from './ArgumentError'
 
 class Guard {
   public static againstNullOrEmpty(paramName: string, value: NullableString) {
     if (this.isNull(value) || value!.trim().length === 0) {
-      throw new Error(`${paramName} can not be null, empty string or contain only whitespace`)
+      throw new ArgumentError(
+        `${paramName} can not be null, empty string or contain only whitespace`
+      )
     }
   }
 
