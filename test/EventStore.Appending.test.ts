@@ -18,6 +18,45 @@ describe('Given a set of engines to test against', () => {
     }
     const engine = getEngine()
     describe('When appending to a new stream', () => {
+      describe('And the stream id is invalid', () => {
+        const invalidStreamIds = [undefined, null, '', ' ']
+        invalidStreamIds.forEach(invalidStreamId => {
+          it(`It should throw an error for stream id: '${invalidStreamId}'`, async () => {
+            const eventStore = await getStore()
+            const event = new EventData(newGuid(), 'BODY')
+            try {
+              await eventStore.AppendToStream(invalidStreamId as string, 0, event)
+            } catch (e) {
+              expect(e.message).toEqual(
+                'streamId can not be null, empty string or contain only whitespace'
+              )
+            }
+          })
+        })
+      })
+      describe('And we have multiple events to save', () => {
+        const streamId = newGuid()
+        const firstEvent = new EventData(newGuid(), new OrderCreated(streamId))
+        const secondEvent = new EventData(newGuid(), new OrderDispatched(streamId))
+        const eventsToSave = [firstEvent, secondEvent]
+
+        it('It should save both events and allow them to be retrievable', async () => {
+          const sut = await getStore()
+          await sut.AppendToStream(streamId, 0, ...eventsToSave)
+
+          const savedEvents = await sut.readStreamForwards(streamId)
+
+          expect(savedEvents.length).toEqual(2)
+          const firstSavedEvent = savedEvents.shift() as StorageEvent
+          const secondSavedEvent = savedEvents.shift() as StorageEvent
+
+          expect(firstSavedEvent.streamId).toEqual(streamId)
+          expect(firstSavedEvent.eventNumber).toEqual(1)
+
+          expect(secondSavedEvent.streamId).toEqual(streamId)
+          expect(secondSavedEvent.eventNumber).toEqual(2)
+        })
+      })
       it('It should save the event', async () => {
         const streamId = newGuid()
         const sut = await getStore()
