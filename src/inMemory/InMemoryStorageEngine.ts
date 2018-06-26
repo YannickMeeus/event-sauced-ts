@@ -1,6 +1,6 @@
 import { IStorageEngine } from '../IStorageEngine'
 import { StorageEvent } from '../StorageEvent'
-
+import { ConcurrencyError } from '../errors/ConcurrencyError'
 class InMemoryStorageEngine implements IStorageEngine {
   private readonly streams: Map<string, StorageEvent[]>
 
@@ -21,8 +21,8 @@ class InMemoryStorageEngine implements IStorageEngine {
         } : Actual revision ${this.streams.get(streamId)!.length}"`
       )
     }
-
-    this.streams.set(streamId, events)
+    const stream = this.streams.get(streamId)!.concat(events)
+    this.streams.set(streamId, stream)
   }
 
   public async readStreamForwards(
