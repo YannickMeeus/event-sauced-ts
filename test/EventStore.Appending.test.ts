@@ -50,18 +50,34 @@ describe('Given a set of engines to test against', () => {
         expect(lastEvent.eventId).toEqual(secondEvent.eventId)
         expect(lastEvent.eventNumber).toEqual(2)
       })
-      describe('When appending to a new stream with an unexpected version', () => {
-        const invalidRevisions = [-1, 1, 2, 99]
-        invalidRevisions.forEach(invalidRevision => {
-          it(`It should throw a concurrency error with revision number: '${invalidRevision}'`, async () => {
-            const streamId = newGuid()
-            const sut = await getStore()
-            const event = new EventData(newGuid(), new OrderDispatched(streamId))
+    })
+    describe('When appending to a new stream with an unexpected version', () => {
+      const invalidRevisions = [-1, 1, 2, 99]
+      invalidRevisions.forEach(invalidRevision => {
+        it(`It should throw a concurrency error with revision number: '${invalidRevision}'`, async () => {
+          const streamId = newGuid()
+          const sut = await getStore()
+          const event = new EventData(newGuid(), new OrderDispatched(streamId))
 
-            await expect(sut.AppendToStream(streamId, invalidRevision, event)).rejects.toThrow(
-              'Concurrency conflict'
-            )
-          })
+          await expect(sut.AppendToStream(streamId, invalidRevision, event)).rejects.toThrow(
+            'Concurrency conflict'
+          )
+        })
+      })
+    })
+    describe('When appending to an existing stream with an unexpected version', () => {
+      const invalidRevisions = [0, 2]
+      invalidRevisions.forEach(invalidRevision => {
+        it(`It should throw a concurrency error with revision number: '${invalidRevision}'`, async () => {
+          const streamId = newGuid()
+          const sut = await getStore()
+
+          const existingEvent = new EventData(newGuid(), new OrderCreated(streamId))
+          const newEvent = new EventData(newGuid(), new OrderDispatched(streamId))
+          await sut.AppendToStream(streamId, 0, existingEvent)
+          await expect(sut.AppendToStream(streamId, invalidRevision, newEvent)).rejects.toThrow(
+            'Concurrency conflict'
+          )
         })
       })
     })
