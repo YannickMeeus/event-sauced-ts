@@ -6,14 +6,15 @@ describe('When the body is not provided', () => {
     expect(() => new EventData(uuid.v4(), undefined)).toThrowError('body can not be null')
   })
 })
-describe('When creating an instance of a StorageEvent', () => {
-  const eventId = uuid.v4()
-
+describe('When creating an instance of an EventData object', () => {
+  const expectedEventId = uuid.v4()
   const expectedMetaData = 'METADATA'
   const expectedBody = 'BODY'
-  const eventData = new EventData(eventId, expectedBody, expectedMetaData)
+
+  const eventData = new EventData(expectedEventId, expectedBody, expectedMetaData)
+
   it('It should map the event Id correctly', () => {
-    expect(eventData.eventId).toEqual(eventId)
+    expect(eventData.eventId).toEqual(expectedEventId)
   })
   it('It should map the body correctly', () => {
     expect(eventData.body).toEqual(expectedBody)

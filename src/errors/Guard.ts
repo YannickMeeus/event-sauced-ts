@@ -1,5 +1,4 @@
 import { NullableString } from '../types'
-import { ArgumentMissingError } from './ArgumentMissingError'
 
 class Guard {
   public static againstNullOrEmpty(paramName: string, value: NullableString) {
