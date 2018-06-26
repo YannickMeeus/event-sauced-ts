@@ -16,6 +16,23 @@ describe('Given a set of engines to test against', () => {
       await engine.initialise()
       return new EventStore(engine)
     }
+    describe('When reading any stream', () => {
+      describe('And the stream id is dodgy', () => {
+        const invalidStreamIds = [null, undefined, '', ' ']
+        invalidStreamIds.forEach(invalidStreamId => {
+          it(`It should throw an error for stream id: '${invalidStreamId}'`, async () => {
+            const sut = await getStore()
+            try {
+              await sut.readStreamForwards(invalidStreamId as string)
+            } catch (e) {
+              expect(e.message).toEqual(
+                'streamId can not be null, empty string or contain only whitespace'
+              )
+            }
+          })
+        })
+      })
+    })
     describe('When reading an empty stream', () => {
       it('It should return an empty array', async () => {
         const streamId = newGuid()
