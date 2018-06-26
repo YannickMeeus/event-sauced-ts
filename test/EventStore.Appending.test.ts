@@ -71,6 +71,24 @@ describe('Given a set of engines to test against', () => {
         expect(savedEvent.eventId).toEqual(event.eventId)
         expect(savedEvent.eventNumber).toEqual(1)
       })
+      it('It should save the meta data correctly', async () => {
+        interface SomeMetaData {
+          value: string
+        }
+
+        const metaData: SomeMetaData = {
+          value: 'foo'
+        }
+
+        const streamId = newGuid()
+        const sut = await getStore()
+        const event = new EventData(newGuid(), new OrderCreated(streamId), metaData)
+
+        await sut.AppendToStream(streamId, 0, event)
+        const stream = await sut.readStreamForwards(streamId)
+        const savedEvent = stream.pop() as StorageEvent
+        expect(savedEvent.metaData as SomeMetaData).toEqual(metaData)
+      })
     })
     describe('When appending to an existing stream', () => {
       it('It should save the event', async () => {
