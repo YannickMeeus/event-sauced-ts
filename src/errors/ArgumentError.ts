@@ -1,7 +1,3 @@
-class ArgumentError extends Error {
-  constructor(message: string) {
-    super(message)
-  }
-}
+class ArgumentError extends Error {}
 
 export { ArgumentError }
