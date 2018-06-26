@@ -32,3 +32,5 @@ class EventStore {
     return this.engine.readStreamForwards(streamId, startPosition, numberOfEvents)
   }
 }
+
+export { EventStore }

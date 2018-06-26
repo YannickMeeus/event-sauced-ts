@@ -2,7 +2,11 @@ import { IStorageEngine } from '../IStorageEngine'
 import { StorageEvent } from '../StorageEvent'
 
 class InMemoryStorageEngine implements IStorageEngine {
-  constructor(private readonly streams: Map<string, StorageEvent[]>) {}
+  private readonly streams: Map<string, StorageEvent[]>
+
+  constructor() {
+    this.streams = new Map<string, StorageEvent[]>()
+  }
 
   public async appendToStream(streamId: string, events: StorageEvent[]): Promise<void> {
     if (!this.streams.has(streamId)) {
@@ -37,3 +41,5 @@ class InMemoryStorageEngine implements IStorageEngine {
     return this
   }
 }
+
+export { InMemoryStorageEngine }
