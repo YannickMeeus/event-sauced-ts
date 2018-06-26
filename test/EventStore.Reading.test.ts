@@ -41,6 +41,20 @@ describe('Given a set of engines to test against', () => {
         expect(stream.shift()!.eventBody).toBeInstanceOf(OrderCreated)
         expect(stream.shift()!.eventBody).toBeInstanceOf(OrderDispatched)
       })
+      it('It should return a subset of events', async () => {
+        const streamId = newGuid()
+        const sut = await getStore()
+        const firstEvent = new EventData(newGuid(), new OrderCreated(streamId))
+        const secondEvent = new EventData(newGuid(), new OrderDispatched(streamId))
+
+        await sut.AppendToStream(streamId, 0, firstEvent)
+        await sut.AppendToStream(streamId, 1, secondEvent)
+
+        const subsetOfStream = await sut.readStreamForwards(streamId, 2, 1)
+
+        expect(subsetOfStream.length).toEqual(1)
+        expect(subsetOfStream[0].eventBody).toBeInstanceOf(OrderDispatched)
+      })
     })
   })
 })
