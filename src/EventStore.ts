@@ -1,6 +1,7 @@
 import { Guard } from './errors/Guard'
-import { EventData, StorageEvent } from './StorageEvent'
+import { StorageEvent } from './StorageEvent'
 import { IStorageEngine } from './IStorageEngine'
+import { EventData } from './EventData'
 
 class EventStore {
   constructor(private readonly engine: IStorageEngine) {
