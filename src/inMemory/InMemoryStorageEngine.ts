@@ -1,15 +1,15 @@
 import { IStorageEngine } from '../IStorageEngine'
-import { StorageEvent } from '../StorageEvent'
 import { ConcurrencyError } from '../errors/ConcurrencyError'
+import { EventStorage } from '../EventStorage'
 
 class InMemoryStorageEngine implements IStorageEngine {
-  private readonly streams: Map<string, StorageEvent[]>
+  private readonly streams: Map<string, EventStorage[]>
 
   constructor() {
-    this.streams = new Map<string, StorageEvent[]>()
+    this.streams = new Map<string, EventStorage[]>()
   }
 
-  public async appendToStream(streamId: string, events: StorageEvent[]): Promise<void> {
+  public async appendToStream(streamId: string, events: EventStorage[]): Promise<void> {
     if (!this.streams.has(streamId)) {
       this.streams.set(streamId, [])
     }
@@ -30,7 +30,7 @@ class InMemoryStorageEngine implements IStorageEngine {
     streamId: string,
     startPosition: number,
     numberOfEvents: number
-  ): Promise<StorageEvent[]> {
+  ): Promise<EventStorage[]> {
     if (!this.streams.has(streamId)) {
       return []
     }
