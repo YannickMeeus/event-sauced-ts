@@ -1,12 +1,12 @@
-import { StorageEvent } from './StorageEvent'
+import { EventStorage } from './EventStorage'
 
 interface IStorageEngine {
-  appendToStream(streamId: string, events: StorageEvent[]): Promise<void>
+  appendToStream(streamId: string, events: EventStorage[]): Promise<void>
   readStreamForwards(
     streamId: string,
     startPosition: number,
     numberOfEvents: number
-  ): Promise<StorageEvent[]>
+  ): Promise<EventStorage[]>
   initialise(): Promise<IStorageEngine>
 }
 

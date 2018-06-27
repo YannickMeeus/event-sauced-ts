@@ -1,7 +1,7 @@
 import { InMemoryStorageEngine } from '../src/inMemory/InMemoryStorageEngine'
 import { EventStore } from '../src/EventStore'
 import { IStorageEngine } from '../src/IStorageEngine'
-import { StorageEvent } from '../src/StorageEvent'
+import { EventStorage } from '../src/StorageEvent'
 import * as uuid from 'uuid'
 import { EventData } from '../src/EventData'
 import { OrderCreated } from './Events/OrderCreated'
@@ -49,8 +49,8 @@ describe('Given a set of engines to test against', () => {
           const savedEvents = await sut.readStreamForwards(streamId)
 
           expect(savedEvents.length).toEqual(2)
-          const firstSavedEvent = savedEvents.shift() as StorageEvent
-          const secondSavedEvent = savedEvents.shift() as StorageEvent
+          const firstSavedEvent = savedEvents.shift() as EventStorage
+          const secondSavedEvent = savedEvents.shift() as EventStorage
 
           expect(firstSavedEvent.streamId).toEqual(streamId)
           expect(firstSavedEvent.eventNumber).toEqual(1)
@@ -88,7 +88,7 @@ describe('Given a set of engines to test against', () => {
 
         await sut.AppendToStream(streamId, 0, event)
         const stream = await sut.readStreamForwards(streamId)
-        const savedEvent = stream.pop() as StorageEvent
+        const savedEvent = stream.pop() as EventStorage
         expect(savedEvent.metaData as SomeMetaData).toEqual(metaData)
       })
     })
@@ -105,7 +105,7 @@ describe('Given a set of engines to test against', () => {
         const stream = await sut.readStreamForwards(streamId)
 
         expect(stream.length).toEqual(2)
-        const lastEvent = stream.pop() as StorageEvent
+        const lastEvent = stream.pop() as EventStorage
         expect(lastEvent.eventId).toEqual(secondEvent.eventId)
         expect(lastEvent.eventNumber).toEqual(2)
       })

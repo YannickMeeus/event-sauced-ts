@@ -1,7 +1,7 @@
 import { Guard } from './errors/Guard'
-import { StorageEvent } from './StorageEvent'
 import { IStorageEngine } from './IStorageEngine'
 import { EventData } from './EventData'
+import { EventStorage } from './EventStorage'
 
 class EventStore {
   constructor(private readonly engine: IStorageEngine) {
@@ -15,9 +15,9 @@ class EventStore {
   ): Promise<void> {
     Guard.againstNullOrEmpty('streamId', streamId)
     let eventVersion = expectedVersion
-    const storageEvents: StorageEvent[] = []
+    const storageEvents: EventStorage[] = []
     for (let i = 0; i < events.length; i++) {
-      storageEvents.push(new StorageEvent(streamId, events[i], ++eventVersion))
+      storageEvents.push(new EventStorage(streamId, events[i], ++eventVersion))
     }
 
     return this.engine.appendToStream(streamId, storageEvents)
@@ -27,7 +27,7 @@ class EventStore {
     streamId: string,
     startPosition: number = 0,
     numberOfEvents: number = Number.MAX_SAFE_INTEGER
-  ): Promise<StorageEvent[]> {
+  ): Promise<EventStorage[]> {
     Guard.againstNullOrEmpty('streamId', streamId)
     return this.engine.readStreamForwards(streamId, startPosition, numberOfEvents)
   }

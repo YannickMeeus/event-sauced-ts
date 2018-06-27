@@ -1,8 +1,8 @@
 import * as uuid from 'uuid'
 import { EventData } from '../src/EventData'
-import { StorageEvent } from '../src/StorageEvent'
+import { EventStorage } from '../src/EventStorage'
 
-describe('When creating an instance of a StorageEvent', () => {
+describe('When creating an instance of a EventStorage', () => {
   const expected = {
     eventId: uuid.v4(),
     eventBody: 'BODY',
@@ -11,7 +11,7 @@ describe('When creating an instance of a StorageEvent', () => {
     eventNumber: 1
   }
   const event = new EventData(expected.eventId, expected.eventBody, expected.eventMetaData)
-  const sut = new StorageEvent(expected.streamId, event, expected.eventNumber)
+  const sut = new EventStorage(expected.streamId, event, expected.eventNumber)
 
   it('It should map the stream id correctly', () => {
     expect(sut.streamId).toEqual(expected.streamId)

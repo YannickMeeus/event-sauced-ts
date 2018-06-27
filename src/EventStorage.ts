@@ -1,7 +1,6 @@
 import { EventData } from './EventData'
 
-// TODO: Rename as clashes with native type
-class StorageEvent {
+class EventStorage {
   public eventBody: any
   public metaData: any
   public eventId: string
@@ -17,4 +16,4 @@ class StorageEvent {
   }
 }
 
-export { StorageEvent }
+export { EventStorage }
