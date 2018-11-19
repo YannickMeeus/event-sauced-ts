@@ -1,5 +1,5 @@
 # Simple Event Store Typescript
-[![Greenkeeper badge](https://badges.greenkeeper.io/YannickMeeus/seriouslyzer-ts.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/yannickmeeus/simple-event-store-ts.svg)](https://greenkeeper.io/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![CircleCI](https://circleci.com/gh/YannickMeeus/simple-event-store-ts.svg?style=shield)](https://circleci.com/gh/YannickMeeus/simple-event-store-ts)
 [![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/simple-event-store-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/simple-event-store-ts?branch=master)
