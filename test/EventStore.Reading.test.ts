@@ -1,4 +1,4 @@
-import { InMemoryStorageEngine } from '../src/inMemory/InMemoryStorageEngine'
+import { InMemoryStorageEngine } from '../src/engines/InMemoryStorageEngine'
 import { IStorageEngine } from '../src/IStorageEngine'
 import * as uuid from 'uuid'
 import { EventStore } from '../src/EventStore'
