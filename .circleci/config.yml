@@ -19,14 +19,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
-          name: Update lockfile
-          command: ./node_modules/.bin/greenkeeper-lockfile-update
-      - run:
           name: Run all tests
           command: npm test
-      - run:
-          name: Upload lockfile
-          command: ./node_modules/.bin/greenkeeper-lockfile-upload
       - run:
           name: Lint all source and generate coverage report
           command: npm run test:prod
