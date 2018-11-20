@@ -1,7 +1,7 @@
 import { InMemoryStorageEngine } from '../src/inMemory/InMemoryStorageEngine'
 import { EventStore } from '../src/EventStore'
 import { IStorageEngine } from '../src/IStorageEngine'
-import { EventStorage } from '../src/StorageEvent'
+import { EventStorage } from '../src/EventStorage'
 import * as uuid from 'uuid'
 import { EventData } from '../src/EventData'
 import { OrderCreated } from './Events/OrderCreated'
