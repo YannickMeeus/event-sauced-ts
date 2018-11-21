@@ -33,7 +33,7 @@
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "start-local-dep-dynamo-db": "docker run -d --name local-dynamo-db -p 8000:8000 amazon/dynamodb-local",
     "start-local-dep-dynamo-db-ui": "export DYNAMO_ENDPOINT=http://localhost:8000; dynamodb-admin;",
-    "stop-local-dep-dynamo-db": "docker stop local-dynamo-db;"
+    "stop-local-dep-dynamo-db": "docker stop local-dynamo-db; docker container rm local-dynamo-db;"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
