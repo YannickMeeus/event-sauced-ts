@@ -3,15 +3,26 @@ import { EventStorage } from '../EventStorage'
 
 import AWS = require('aws-sdk')
 
+interface DynamoDBCredentials {
+  key: string
+  secret: string
+}
+
 class DynamoDbStorageEngine implements IStorageEngine {
   private readonly client: AWS.DynamoDB
   private readonly tableName: string = 'streams'
 
-  constructor(region: string, endpoint: string) {
+  constructor(region: string, credentials?: DynamoDBCredentials) {
     AWS.config.update({ region })
-    this.client = new AWS.DynamoDB({
-      endpoint
-    })
+    if (credentials) {
+      AWS.config.update({
+        credentials: {
+          accessKeyId: credentials.key,
+          secretAccessKey: credentials.secret
+        }
+      })
+    }
+    this.client = new AWS.DynamoDB()
   }
   public appendToStream(streamId: string, events: EventStorage[]): Promise<void> {
     throw new Error('NOT IMPLEMENTED') // TODO: Implement this
@@ -44,4 +55,4 @@ class DynamoDbStorageEngine implements IStorageEngine {
     throw new Error('NOT IMPLEMENTED') // TODO: Implement this
   }
 }
-export { DynamoDbStorageEngine }
+export { DynamoDbStorageEngine, DynamoDBCredentials }

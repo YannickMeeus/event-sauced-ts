@@ -1,14 +1,19 @@
 import { DynamoDbStorageEngine } from '../../src/engines/DynamoDbStorageEngine'
 import AWS = require('aws-sdk')
+import credentials = require('../../.credentials/dynamo-db-test-credentials.json')
 const region = 'eu-central-1'
-const endpoint = 'http://localhost:8000'
 const tableName = 'streams'
-
 AWS.config.update({ region })
-const client = new AWS.DynamoDB({ endpoint })
+
+const client = new AWS.DynamoDB({
+  credentials: {
+    accessKeyId: credentials.key,
+    secretAccessKey: credentials.secret
+  }
+})
 
 describe('Given a set up dynamoDB Storage Engine', () => {
-  const engine = new DynamoDbStorageEngine(region, endpoint)
+  const engine = new DynamoDbStorageEngine(region, credentials)
 
   describe('When the storage engine is initialized', () => {
     it(`It should create a table called 'streams'`, async () => {
@@ -22,7 +27,8 @@ describe('Given a set up dynamoDB Storage Engine', () => {
     })
   })
 })
-beforeEach(async () => {
+
+afterEach(async () => {
   try {
     await client.deleteTable({ TableName: tableName }).promise()
   } catch (e) {
