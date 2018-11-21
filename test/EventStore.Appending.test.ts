@@ -1,4 +1,4 @@
-import { InMemoryStorageEngine } from '../src/inMemory/InMemoryStorageEngine'
+import { InMemoryStorageEngine } from '../src/engines/InMemoryStorageEngine'
 import { EventStore } from '../src/EventStore'
 import { IStorageEngine } from '../src/IStorageEngine'
 import { EventStorage } from '../src/EventStorage'
