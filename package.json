@@ -30,7 +30,8 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare"
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "load-credentials": "ts-node tools/loadAllCredentials -p tsconfig.json"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -82,7 +83,7 @@
     "colors": "^1.1.2",
     "commitizen": "^3.0.4",
     "coveralls": "^3.0.0",
-    "cross-env": "^5.0.1",
+    "cross-env": "^5.2.0",
     "cz-conventional-changelog": "^2.0.0",
     "greenkeeper-lockfile": "^1.15.1",
     "husky": "^1.0.0",
