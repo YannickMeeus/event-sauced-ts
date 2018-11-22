@@ -28,6 +28,11 @@ class EventStore {
     startPosition: number = 0,
     numberOfEvents: number = Number.MAX_SAFE_INTEGER
   ): Promise<EventStorage[]> {
+    // TODO: Change this to return eventData,
+    //       instead of EventStorage as I think this is a leaky abstraction.
+    //       This does mean that the return would have to be a tuple in order to
+    //       know what the version of the stream actually is. Maybe return a Stream
+    //       object instead.
     Guard.againstNullOrEmpty('streamId', streamId)
     return this.engine.readStreamForwards(streamId, startPosition, numberOfEvents)
   }
