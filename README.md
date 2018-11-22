@@ -1,20 +1,24 @@
 # Simple Event Store Typescript
-[![Greenkeeper badge](https://badges.greenkeeper.io/yannickmeeus/simple-event-store-ts.svg)](https://greenkeeper.io/)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
 [![CircleCI](https://circleci.com/gh/YannickMeeus/simple-event-store-ts.svg?style=shield)](https://circleci.com/gh/YannickMeeus/simple-event-store-ts)
-[![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/simple-event-store-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/simple-event-store-ts?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e0163bac8dc40bdb5cd501e6689b8d0)](https://www.codacy.com/app/MillingCode/simple-event-store-ts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YannickMeeus/simple-event-store-ts&amp;utm_campaign=Badge_Grade)
+[![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/simple-event-store-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/simple-event-store-ts?
+[![Greenkeeper badge](https://badges.greenkeeper.io/yannickmeeus/simple-event-store-ts.svg)](https://greenkeeper.io/)
+branch=master)
 [![Dev Dependencies](https://david-dm.org/YannickMeeus/simple-event-store-ts/dev-status.svg)](https://david-dm.org/YannickMeeus/simple-event-store-ts?type=dev)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-### NPM scripts
- - `npm t`: Run test suite
- - `npm start`: Run `npm run build` in watch mode
- - `npm run test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
- - `npm run test:prod`: Run linting and generate coverage
- - `npm run build`: Generate bundles and typings, create docs
- - `npm run lint`: Lints code
- - `npm run commit`: Commit using conventional commit style ([husky](https://github.com/typicode/husky) will tell you to use it if you haven't :wink:)
+## NPM scripts
 
-### Excluding peerDependencies
+- `npm t`: Run test suite
+- `npm start`: Run `npm run build` in watch mode
+- `npm run test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
+- `npm run test:prod`: Run linting and generate coverage
+- `npm run build`: Generate bundles and typings, create docs
+- `npm run lint`: Lints code
+- `npm run commit`: Commit using conventional commit style ([husky](https://github.com/typicode/husky) will tell you to use it if you haven't :wink:)
+
+## Excluding peerDependencies
 
 On library development, one might want to set some peer dependencies, and thus remove those from the final bundle. You can see in [Rollup docs](https://rollupjs.org/#peer-dependencies) how to do that.
 
@@ -24,7 +28,7 @@ Good news: the setup is here for you, you must only include the dependency name 
 npm install --global --production windows-build-tools
 ```
 
-#### Setup steps
+## Setup steps
 
 Follow the console instructions to install semantic release and run it (answer NO to "Do you want a `.travis.yml` file with semantic-release setup?").
 
