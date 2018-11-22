@@ -1,5 +1,9 @@
 import { EventData } from './EventData'
 
+/**
+ * @hidden
+ *
+ */
 class EventStorage {
   public eventBody: any
   public metaData: any
