@@ -30,3 +30,13 @@ jobs:
       - run:
           name: Sync coverage report
           command: npm run report-coverage
+      - run:
+          name: Generate Documentation pages and upload
+          command: |
+            if [ $CIRCLE_BRANCH == "master" ]
+            then
+              npm run deploy-docs
+            else
+              echo "Skipping documentation deploy, as the current building branch is not master"
+            fi
+
