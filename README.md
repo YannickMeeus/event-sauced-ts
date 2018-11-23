@@ -1,10 +1,10 @@
 # Simple Event Store Typescript
 
-[![CircleCI](https://circleci.com/gh/YannickMeeus/simple-event-store-ts.svg?style=shield)](https://circleci.com/gh/YannickMeeus/simple-event-store-ts)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e0163bac8dc40bdb5cd501e6689b8d0)](https://www.codacy.com/app/MillingCode/simple-event-store-ts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YannickMeeus/simple-event-store-ts&amp;utm_campaign=Badge_Grade)
-[![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/simple-event-store-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/simple-event-store-ts?branch=master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/yannickmeeus/simple-event-store-ts.svg)](https://greenkeeper.io/)
-[![Dev Dependencies](https://david-dm.org/YannickMeeus/simple-event-store-ts/dev-status.svg)](https://david-dm.org/YannickMeeus/simple-event-store-ts?type=dev)
+[![CircleCI](https://circleci.com/gh/YannickMeeus/event-sauced-ts.svg?style=shield)](https://circleci.com/gh/YannickMeeus/event-sauced-ts)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e0163bac8dc40bdb5cd501e6689b8d0)](https://www.codacy.com/app/MillingCode/event-sauced?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YannickMeeus/event-sauced&amp;utm_campaign=Badge_Grade)
+[![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/event-sauced-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/event-sauced-ts?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/yannickmeeus/event-sauced.svg)](https://greenkeeper.io/)
+[![Dev Dependencies](https://david-dm.org/YannickMeeus/event-sauced-ts/dev-status.svg)](https://david-dm.org/YannickMeeus/event-sauced-ts?type=dev)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## NPM scripts
