@@ -1,18 +1,18 @@
 {
-  "name": "ts-event-sourcing",
+  "name": "event-sourced",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
-  "main": "dist/ts-event-sourcing.umd.js",
-  "module": "dist/ts-event-sourcing.es5.js",
-  "typings": "dist/types/ts-event-sourcing.d.ts",
+  "main": "dist/event-sourced.umd.js",
+  "module": "dist/event-sourced.es5.js",
+  "typings": "dist/types/event-sourced.d.ts",
   "files": [
     "dist"
   ],
   "author": "Yannick Meeus <yannick.meeus@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YannickMeeus/simple-event-store-ts"
+    "url": "https://github.com/YannickMeeus/event-sourced-ts"
   },
   "license": "MIT",
   "engines": {
