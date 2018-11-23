@@ -1,18 +1,25 @@
 {
-  "name": "event-sourced",
-  "version": "0.0.0",
+  "name": "event-sauced",
+  "version": "0.0.1",
   "description": "",
-  "keywords": [],
-  "main": "dist/event-sourced.umd.js",
-  "module": "dist/event-sourced.es5.js",
-  "typings": "dist/types/event-sourced.d.ts",
+  "keywords": [
+    "Event Store",
+    "Event Sourcing",
+    "CQRS",
+    "Command",
+    "Query",
+    "Multi-database"
+  ],
+  "main": "dist/event-sauced-ts.umd.js",
+  "module": "dist/event-sauced-ts.es5.js",
+  "typings": "dist/types/event-sauced-ts.d.ts",
   "files": [
     "dist"
   ],
   "author": "Yannick Meeus <yannick.meeus@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YannickMeeus/event-sourced-ts"
+    "url": "https://github.com/YannickMeeus/event-sauced-ts"
   },
   "license": "MIT",
   "engines": {

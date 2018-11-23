@@ -1,4 +1,8 @@
-# Simple Event Store Typescript
+# Event-Sauced - Slightly opinionated multi-database Event Store
+
+> For when you need to store events... in a store... of some description
+
+>## Both the README document and the library itself are a work-in-progress. Under no circumstances should you be using this library in production.
 
 [![CircleCI](https://circleci.com/gh/YannickMeeus/event-sauced-ts.svg?style=shield)](https://circleci.com/gh/YannickMeeus/event-sauced-ts)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e0163bac8dc40bdb5cd501e6689b8d0)](https://www.codacy.com/app/MillingCode/event-sauced?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YannickMeeus/event-sauced&amp;utm_campaign=Badge_Grade)
@@ -7,40 +11,62 @@
 [![Dev Dependencies](https://david-dm.org/YannickMeeus/event-sauced-ts/dev-status.svg)](https://david-dm.org/YannickMeeus/event-sauced-ts?type=dev)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-## NPM scripts
 
-- `npm t`: Run test suite
-- `npm start`: Run `npm run build` in watch mode
-- `npm run test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
-- `npm run test:prod`: Run linting and generate coverage
-- `npm run build`: Generate bundles and typings, create docs
-- `npm run lint`: Lints code
-- `npm run commit`: Commit using conventional commit style ([husky](https://github.com/typicode/husky) will tell you to use it if you haven't :wink:)
+This project started out as a re-implementation of [ASOS/SimpleEventStore](https://github.com/ASOS/SimpleEventStore) in TypeScript. What was initially just a simple re-write, is slowly becoming a more featured library.
 
-## Excluding peerDependencies
+The goal of Event-Sauced is to be provide a database-agnostic API for an event store. It will be slightly opinionated, but only to the point of provided the right abstraction over the various databases. It operates on a couple of premises:
 
-On library development, one might want to set some peer dependencies, and thus remove those from the final bundle. You can see in [Rollup docs](https://rollupjs.org/#peer-dependencies) how to do that.
+- Be able to get going with only the core module and the included `InMemoryStorageEngine`
+- Be as modular as possible - no reason to pull down the `aws-sdk` if you are going to use PostgreSQL as a data engine
+- Allow users to implement - and inject - their own data engines if so desired
+- Provide data consistency and concurrency support in all supported engines
 
-Good news: the setup is here for you, you must only include the dependency name in `external` property within `rollup.config.js`. For example, if you want to exclude `lodash`, just write there `external: ['lodash']`.
+## Usage
 
-```bash
-npm install --global --production windows-build-tools
+### JavaScript
+
+```js
+// TODO: fill this in
+
 ```
 
-## Setup steps
+### TypeScript
 
-Follow the console instructions to install semantic release and run it (answer NO to "Do you want a `.travis.yml` file with semantic-release setup?").
-
-_Note: make sure you've setup `repository.url` in your `package.json` file_
-
-```bash
-npm install -g semantic-release-cli
-semantic-release-cli setup
-# IMPORTANT!! Answer NO to "Do you want a `.travis.yml` file with semantic-release setup?" question. It is already prepared for you :P
+```ts
+import {EventStore} from 'event-sauced'
+// TODO: fill this in
 ```
 
-From now on, you'll need to use `npm run commit`, which is a convenient way to create conventional commits.
+## Install
 
-Automatic releases are possible thanks to [semantic release](https://github.com/semantic-release/semantic-release), which publishes your code automatically on [github](https://github.com/) and [npm](https://www.npmjs.com/), plus generates automatically a changelog. This setup is highly influenced by [Kent C. Dodds course on egghead.io](https://egghead.io/courses/how-to-write-an-open-source-javascript-library)
+### Core library
+With [npm](https://npmjs.org/) installed, run
 
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind are welcome!
+```sh
+$ npm install event-sauced
+```
+
+### Data Storage Engines
+
+With [npm](https://npmjs.org/) installed, run
+
+```sh
+$ npm install event-sauced-dynamodb
+$ npm install event-sauced-cosmosdb
+$ npm install event-sauced-postgresql
+...
+```
+
+## Acknowledgments
+
+event-sauced was inspired by..
+
+## See Also
+
+- [`noffle/common-readme`](https://github.com/noffle/common-readme)
+- ...
+
+## License
+
+MIT
+
