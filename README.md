@@ -5,7 +5,7 @@
 >## Both the README document and the library itself are a work-in-progress. Under no circumstances should you be using this library in production.
 
 [![CircleCI](https://circleci.com/gh/YannickMeeus/event-sauced-ts.svg?style=shield)](https://circleci.com/gh/YannickMeeus/event-sauced-ts)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e0163bac8dc40bdb5cd501e6689b8d0)](https://www.codacy.com/app/MillingCode/event-sauced?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YannickMeeus/event-sauced&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/30cc79935d02466194442678efc156f3)](https://www.codacy.com/app/MillingCode/event-sauced-ts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YannickMeeus/event-sauced-ts&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/event-sauced-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/event-sauced-ts?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/yannickmeeus/event-sauced-ts.svg)](https://greenkeeper.io/)
 [![Dev Dependencies](https://david-dm.org/YannickMeeus/event-sauced-ts/dev-status.svg)](https://david-dm.org/YannickMeeus/event-sauced-ts?type=dev)
