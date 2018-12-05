@@ -1,5 +1,5 @@
 {
-  "name": "event-sauced",
+  "name": "@milling-code/event-sauced",
   "version": "0.0.1",
   "description": "",
   "keywords": [
@@ -108,10 +108,10 @@
     "typedoc": "^0.13.0",
     "typescript": "^3.1.6",
     "uuid": "^3.3.2",
-    "validate-commit-msg": "^2.12.2"
+    "validate-commit-msg": "^2.12.2",
+    "event-stream": "4.0.1"
   },
   "dependencies": {
-    "event-stream": "4.0.1"
   },
   "husky": {
     "hooks": {
