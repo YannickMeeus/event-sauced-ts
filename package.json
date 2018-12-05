@@ -26,18 +26,9 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts' -p .",
-    "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
-    "start": "rollup -c rollup.config.ts -w",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare"
+    "start": "nps",
+    "test": "nps test",
+    "commit": "git-cz"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -96,6 +87,8 @@
     "jest": "23.6.0",
     "lint-staged": "^8.0.5",
     "lodash.camelcase": "^4.3.0",
+    "nps": "5.9.3",
+    "nps-utils": "1.7.0",
     "prettier": "^1.13.7",
     "prompt": "^1.0.0",
     "replace-in-file": "^3.0.0-beta.2",
@@ -109,7 +102,7 @@
     "semantic-release": "15.12.4",
     "ts-jest": "^23.0.0",
     "ts-node": "^7.0.1",
-    "tslint": "^5.10.0",
+    "tslint": "5.11.0",
     "tslint-config-prettier": "^1.1.0",
     "tslint-config-standard": "^8.0.0",
     "typedoc": "^0.13.0",
@@ -117,7 +110,9 @@
     "uuid": "^3.3.2",
     "validate-commit-msg": "^2.12.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "event-stream": "4.0.1"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
