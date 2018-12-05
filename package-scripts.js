@@ -1,22 +1,31 @@
 const concurrently = require('nps-utils').concurrent.nps
+const series = require('nps-utils').series.nps
 module.exports = {
   scripts: {
-    pre: {
-      default: concurrently('pre.lint', 'pre.build'),
+    prerequisites: {
+      default: concurrently('prerequisites.lint', 'prerequisites.build'),
       lint: 'tslint -t codeFrame \'src/**/*.ts\' \'test/**/*.ts\' -p .',
       build: 'rimraf dist',
     },
-
-    build: 'nps prebuild && tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src',
+    build: {
+      default: series('build.transpile', 'build.package'),
+      transpile: 'tsc --module commonjs',
+      package: 'rollup -c rollup.config.ts'
+    },
+    documentation: {
+      default: series('documentation.generate', 'documentation.deploy'),
+      generate: 'typedoc --out docs --target es6 --theme minimal --mode file src',
+      deploy: 'ts-node tools/gh-pages-publish'
+    },
+    coverage: {
+      default: series('coverage.generate', 'coverage.report'),
+      generate: 'jest --coverage --no-cache',
+      report: 'cat ./coverage/lcov.info | coveralls'
+    },
     default: 'rollup -c rollup.config.ts -w',
     test: {
       default: 'jest',
       watch: 'jest --watch',
-      prod: 'nps "lint npm run test -- --coverage --no-cache"'
-    },
-    deployDocs: 'ts-node tools/gh-pages-publish',
-    reportCoverage: 'cat ./coverage/lcov.info | coveralls',
-    semanticRelease: 'semantic-release',
-    semanticReleasePrepare: 'ts-node tools/semantic-release-prepare'
+    }
   }
 };

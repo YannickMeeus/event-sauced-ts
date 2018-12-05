@@ -25,24 +25,26 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
-          name: Run all tests
+          name: Lint all source
+          command: npm start prerequisites.lint
+      - run:
+          name: Run all unit tests
           command: npm test
       - run:
-          name: Lint all source and generate coverage report
-          command: npm run test:prod
+          name: Remove dist folder if one exists
+          command: npm start prerequisites.build
       - run:
-          name: Build source (Rollup) and generate library
-          command: npm run build
+          name: Transpile and package up the library
+          command: npm start build
       - run:
           name: Sync coverage report
-          command: npm run report-coverage
+          command: npm start coverage
       - run:
           name: Generate Documentation pages and upload
           command: |
             if [ $CIRCLE_BRANCH == "master" ]
             then
-              npm run deploy-docs
+              npm start documentation
             else
               echo "Skipping documentation deploy, as the current building branch is not master"
             fi
-
