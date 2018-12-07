@@ -82,7 +82,7 @@
     "coveralls": "^3.0.0",
     "cross-env": "^5.0.1",
     "cz-conventional-changelog": "^2.0.0",
-    "event-stream": "4.0.1",
+    "event-stream": "3.3.4",
     "greenkeeper-lockfile": "^1.15.1",
     "husky": "^1.0.0",
     "jest": "23.6.0",
