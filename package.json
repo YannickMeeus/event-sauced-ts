@@ -82,6 +82,7 @@
     "coveralls": "^3.0.0",
     "cross-env": "^5.0.1",
     "cz-conventional-changelog": "^2.0.0",
+    "event-stream": "4.0.1",
     "greenkeeper-lockfile": "^1.15.1",
     "husky": "^1.0.0",
     "jest": "23.6.0",
@@ -108,11 +109,9 @@
     "typedoc": "^0.13.0",
     "typescript": "^3.1.6",
     "uuid": "^3.3.2",
-    "validate-commit-msg": "^2.12.2",
-    "event-stream": "4.0.1"
+    "validate-commit-msg": "^2.12.2"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
