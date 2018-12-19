@@ -17,6 +17,10 @@ module.exports = {
       generate: 'typedoc --out docs --target es6 --theme minimal --mode file src',
       deploy: 'ts-node tools/gh-pages-publish'
     },
+    deploy: {
+      default: 'semantic-release',
+      prepare: 'ts-node tools/semantic-release-prepare.ts'
+    },
     coverage: {
       default: series('coverage.generate', 'coverage.report'),
       generate: 'jest --coverage --no-cache',

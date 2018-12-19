@@ -1,6 +1,6 @@
 {
   "name": "@milling-code/event-sauced",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "",
   "keywords": [
     "Event Store",
@@ -28,7 +28,10 @@
   "scripts": {
     "start": "nps",
     "test": "nps test",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "prepush": "npm start prerequisites && npm start build",
+    "commitmsg": "validate-commit-msg"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
