@@ -7,7 +7,7 @@ const pkg = JSON.parse(
   readFileSync(path.resolve(__dirname, "..", "package.json"))
 )
 
-pkg.scripts.prepush = "npm run test:prod && npm run build"
+pkg.scripts.prepush = "npm start prerequisites && npm start build"
 pkg.scripts.commitmsg = "validate-commit-msg"
 
 writeFileSync(
@@ -16,7 +16,7 @@ writeFileSync(
 )
 
 // Call husky to set up the hooks
-fork(path.resolve(__dirname, "..", "node_modules", "husky", "bin", "install"))
+fork(path.resolve(__dirname, "..", "node_modules", "husky", "lib", "installer", 'bin'), ['install'])
 
 console.log()
 console.log(colors.green("Done!!"))
