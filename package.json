@@ -22,9 +22,6 @@
     "url": "https://github.com/YannickMeeus/event-sauced-ts"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=6.0.0"
-  },
   "scripts": {
     "start": "nps",
     "test": "nps test",
