@@ -26,7 +26,7 @@
     "start": "nps",
     "test": "nps test",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "publish:dryrun": "node-env-run -E ./secrets/publishing.env --exec 'semantic-release --dry-run'"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
