@@ -1,5 +1,5 @@
 {
-  "name": "@milling-code/event-sauced",
+  "name": "@make-stuff-work/event-sauced",
   "version": "0.0.0-development",
   "description": "",
   "keywords": [
@@ -22,16 +22,11 @@
     "url": "https://github.com/YannickMeeus/event-sauced-ts"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=6.0.0"
-  },
   "scripts": {
     "start": "nps",
     "test": "nps test",
     "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "prepush": "npm start prerequisites && npm start build",
-    "commitmsg": "validate-commit-msg"
+    "semantic-release": "semantic-release"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -117,6 +112,8 @@
   "dependencies": {},
   "husky": {
     "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-push": "npm start prerequisites && npm start build",
       "pre-commit": "lint-staged"
     }
   }
