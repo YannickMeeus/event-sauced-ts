@@ -13,8 +13,7 @@
   "scripts": {
     "start": "nps",
     "test": "nps test",
-    "commit": "git-cz",
-    "publish:dryrun": "node-env-run -E ./secrets/publishing.env --exec 'semantic-release --dry-run'"
+    "commit": "git-cz"
   },
   "main": "dist/event-sauced-ts.umd.js",
   "module": "dist/event-sauced-ts.es5.js",
