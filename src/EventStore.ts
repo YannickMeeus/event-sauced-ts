@@ -41,6 +41,23 @@ class EventStore {
     return this.engine.appendToStream(streamId, storageEvents)
   }
 
+  /**
+   * Returns a list of events contained in a stream. It supports either
+   * returning the entire stream, a subset of the stream from a starting position onwards
+   * and a slice of the stream based on the starting position and the number of events.
+   *
+   * If the stream is empty, an empty is array is returned. Currently no validation is applied
+   * in any of the engines to verify the sensibility of your startPosition and numberOfEvents
+   * parameters. If they make no sense, the results will make no sense.
+   *
+   * @param {string} streamId This is the core identifier for a single stream.
+   * It can be the natural unique key for an event type, such as a 'user id'.
+   * @param {number} startPosition The position of the event you want to start reading
+   * the stream for. TODO: Specify whether this is 0-based or 1-based.
+   * @param {number} numberOfEvents The amount of events to pull out of the stream.
+   * @returns {Promise<EventStorage[]>}
+   * @memberof EventStore
+   */
   public readStreamForwards(
     streamId: string,
     startPosition: number = 0,
