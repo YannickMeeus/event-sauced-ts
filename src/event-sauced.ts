@@ -4,3 +4,6 @@
 export * from './EventData'
 export * from './EventStore'
 export * from './EventStorage'
+export * from './inMemory/InMemoryStorageEngine'
+export * from './IStorageEngine'
+export * from './errors'
