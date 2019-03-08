@@ -21,8 +21,6 @@ The goal of Event-Sauced is to be provide a database-agnostic API for an event s
 
 ## Usage
 
-### JavaScript
-
 ```js
 // const eventStore = require('event-sauced-ts.umd);
 // or
@@ -80,16 +78,10 @@ const eventStore = new e.EventStore(storageEngine);
 
 ```
 
-### TypeScript
-
-```ts
-import {EventStore} from 'event-sauced'
-// TODO: fill this in
-```
-
 ## Install
 
-### Core library
+## Core library
+
 With [npm](https://npmjs.org/) installed, run
 
 ```sh
@@ -106,15 +98,6 @@ $ npm install event-sauced-cosmosdb
 $ npm install event-sauced-postgresql
 ...
 ```
-
-## Acknowledgments
-
-event-sauced was inspired by..
-
-## See Also
-
-- [`noffle/common-readme`](https://github.com/noffle/common-readme)
-- ...
 
 ## License
 
