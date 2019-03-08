@@ -10,6 +10,12 @@
     "Query",
     "Multi-database"
   ],
+  "scripts": {
+    "start": "nps",
+    "test": "nps test",
+    "commit": "git-cz",
+    "publish:dryrun": "node-env-run -E ./secrets/publishing.env --exec 'semantic-release --dry-run'"
+  },
   "main": "dist/event-sauced-ts.umd.js",
   "module": "dist/event-sauced-ts.es5.js",
   "typings": "dist/types/event-sauced-ts.d.ts",
@@ -22,12 +28,7 @@
     "url": "https://github.com/YannickMeeus/event-sauced-ts"
   },
   "license": "MIT",
-  "scripts": {
-    "start": "nps",
-    "test": "nps test",
-    "commit": "git-cz",
-    "publish:dryrun": "node-env-run -E ./secrets/publishing.env --exec 'semantic-release --dry-run'"
-  },
+
   "lint-staged": {
     "{src,test}/**/*.ts": [
       "prettier --write",
