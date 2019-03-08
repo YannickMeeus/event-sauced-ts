@@ -19,6 +19,10 @@ The goal of Event-Sauced is to be provide a database-agnostic API for an event s
 - Allow users to implement - and inject - their own data engines if so desired
 - Provide data consistency and concurrency support in all supported engines
 
+## Documentation
+The documentation is currently hosted on GitHub pages, and can be found [here](https://yannickmeeus.github.io/event-sauced-ts/).
+It might not look the prettiest, but I can guarantee it's at least a little bit accurate.
+
 ## Usage
 
 ```js
