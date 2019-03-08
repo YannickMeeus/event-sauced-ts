@@ -8,6 +8,24 @@ class EventStore {
     Guard.againstNull('engine', engine)
   }
 
+  /**
+   * Append a number of events to a stream. Storage engine specific
+   * concurrency checks will apply, to ensure streams maintain their
+   * integrity.
+   *
+   * @param {string} streamId This is the core identifier for a single stream.
+   * It can be the natural unique key for an event type, such as a 'user id'.
+   *
+   * It can not be empty, null, undefined or any other crazy business.
+   * @param {number} expectedVersion This is the version that the client side (your code)
+   * thinks the stream is currently operating against. If it was version 2 when you read
+   * the stream, you should pass in 2.
+   * @param {EventData[]} events The list of events to append to a stream. Currently there
+   * is no guard in place for passing in an empty array, so keep that in mind.
+   *
+   * @returns {Promise<void>}
+   * @memberof EventStore
+   */
   public AppendToStream(
     streamId: string,
     expectedVersion: number,
