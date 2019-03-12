@@ -17,7 +17,7 @@ module.exports = {
       generate: 'typedoc --out docs --target es6 --theme minimal --mode file src',
       deploy: 'ts-node tools/gh-pages-publish'
     },
-    public: {
+    publish: {
       default: 'semantic-release',
       dryrun: 'node-env-run -E ./secrets/publishing.env --exec \'semantic-release --dry-run',
       prepare: 'ts-node tools/semantic-release-prepare.ts'

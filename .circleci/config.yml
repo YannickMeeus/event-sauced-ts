@@ -48,3 +48,12 @@ jobs:
             else
               echo "Skipping documentation deploy, as the current building branch is not master"
             fi
+      - run:
+          name: Publish new version to NPM
+          command: |
+            if [ $CIRCLE_BRANCH == "master" ]
+            then
+              npm start publish
+            else
+              echo "Skipping publish, as the current building branch is not master"
+            fi
