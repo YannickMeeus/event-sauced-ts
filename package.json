@@ -15,9 +15,9 @@
     "test": "nps test",
     "commit": "git-cz"
   },
-  "main": "dist/event-sauced-ts.umd.js",
-  "module": "dist/event-sauced-ts.es5.js",
-  "typings": "dist/types/event-sauced-ts.d.ts",
+  "main": "dist/event-sauced.umd.js",
+  "module": "dist/event-sauced.es5.js",
+  "typings": "dist/types/event-sauced.d.ts",
   "files": [
     "dist"
   ],
