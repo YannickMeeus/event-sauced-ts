@@ -1,8 +1,8 @@
 # Event-Sauced - Slightly opinionated multi-database Event Store
 
 > For when you need to store events... in a store... of some description
->## Both the README document and the library itself are a work-in-progress. Under no circumstances should you be using this library in production
 
+![npm (scoped)](https://img.shields.io/npm/v/@make-stuff-work/event-sauced.svg)]
 [![CircleCI](https://circleci.com/gh/YannickMeeus/event-sauced-ts.svg?style=shield)](https://circleci.com/gh/YannickMeeus/event-sauced-ts)
 [![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/event-sauced-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/event-sauced-ts?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/yannickmeeus/event-sauced-ts.svg)](https://greenkeeper.io/)
