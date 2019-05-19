@@ -27,7 +27,6 @@
     "url": "https://github.com/YannickMeeus/event-sauced-ts"
   },
   "license": "MIT",
-
   "lint-staged": {
     "{src,test}/**/*.ts": [
       "prettier --write",
