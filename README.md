@@ -1,8 +1,8 @@
 # Event-Sauced - Slightly opinionated multi-database Event Store
 
 > For when you need to store events... in a store... of some description
->## Both the README document and the library itself are a work-in-progress. Under no circumstances should you be using this library in production
 
+![npm (scoped)](https://img.shields.io/npm/v/@make-stuff-work/event-sauced.svg)]
 [![CircleCI](https://circleci.com/gh/YannickMeeus/event-sauced-ts.svg?style=shield)](https://circleci.com/gh/YannickMeeus/event-sauced-ts)
 [![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/event-sauced-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/event-sauced-ts?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/yannickmeeus/event-sauced-ts.svg)](https://greenkeeper.io/)
@@ -69,10 +69,10 @@ const eventStore = new e.EventStore(storageEngine);
   console.log(currentStoredEventStream);
 
   // Add the third event to the stream, notice that we have to specify where we think we are in the stream.
-  //   This is our concurrency check, the engine will verify this but the reason we have to be in agreement
-  //   with the server is to ensure we do not get a corrupt stream.
-  //   In practice, this would be hidden away from the consumer in the repository or what-not, but I wanted
-  //   to keep that kind of complexity out of this.
+  // This is our concurrency check, the engine will verify this but the reason we have to be in agreement
+  // with the server is to ensure we do not get a corrupt stream.
+  // In practice, this would be hidden away from the consumer in the repository or what-not, but I wanted
+  // to keep that kind of complexity out of this.
   await eventStore.AppendToStream(streamId, 2, toEventData(thirdEvent))
 
   // Lo and behold, we now have a third event in the stream
