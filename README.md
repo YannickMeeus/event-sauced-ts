@@ -69,10 +69,10 @@ const eventStore = new e.EventStore(storageEngine);
   console.log(currentStoredEventStream);
 
   // Add the third event to the stream, notice that we have to specify where we think we are in the stream.
-  //   This is our concurrency check, the engine will verify this but the reason we have to be in agreement
-  //   with the server is to ensure we do not get a corrupt stream.
-  //   In practice, this would be hidden away from the consumer in the repository or what-not, but I wanted
-  //   to keep that kind of complexity out of this.
+  // This is our concurrency check, the engine will verify this but the reason we have to be in agreement
+  // with the server is to ensure we do not get a corrupt stream.
+  // In practice, this would be hidden away from the consumer in the repository or what-not, but I wanted
+  // to keep that kind of complexity out of this.
   await eventStore.AppendToStream(streamId, 2, toEventData(thirdEvent))
 
   // Lo and behold, we now have a third event in the stream
