@@ -140,5 +140,10 @@ describe('Given a set of engines to test against', () => {
         })
       })
     })
+    describe('When terminating the event store', () => {
+      it(`It should just terminate without any bells and whistles (this is an in memory store we're talking about`, async () => {
+        await expect(engine.terminate()).resolves.not.toThrowError()
+      })
+    })
   })
 })

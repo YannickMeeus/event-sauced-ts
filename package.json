@@ -55,6 +55,9 @@
       "tsx",
       "js"
     ],
+    "watchPathIgnorePatterns": [
+      "node_modules"
+    ],
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/test/"

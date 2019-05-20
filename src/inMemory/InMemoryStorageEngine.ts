@@ -41,6 +41,10 @@ class InMemoryStorageEngine implements IStorageEngine {
   public async initialise(): Promise<IStorageEngine> {
     return this
   }
+
+  public async terminate(): Promise<void> {
+    this.streams.clear()
+  }
 }
 
 export { InMemoryStorageEngine }
