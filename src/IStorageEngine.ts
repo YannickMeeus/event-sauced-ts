@@ -54,6 +54,19 @@ interface IStorageEngine {
     startPosition: number,
     numberOfEvents: number
   ): Promise<EventStorage[]>
+
+  /**
+   * Much like being initialized, the event store needs to be terminated gracefully
+   * in the case of an expected shutdown, or during testing.
+   *
+   * There is no guarantee as to whether a particular engine requires this call,
+   * so I'll leave that up to the consumer to figure out from the engine-specific
+   * documentation.
+   *
+   * @returns {Promise<void>}
+   * @memberof IStorageEngine
+   */
+  terminate(): Promise<void>
 }
 
 export { IStorageEngine }
