@@ -47,7 +47,7 @@
   },
   "jest": {
     "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      ".(ts|tsx)": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
@@ -83,7 +83,6 @@
     "colors": "^1.1.2",
     "commitizen": "^3.1.1",
     "coveralls": "^3.0.0",
-    "cross-env": "^5.0.1",
     "cz-conventional-changelog": "^2.0.0",
     "event-stream": "4.0.1",
     "greenkeeper-lockfile": "^1.15.1",
