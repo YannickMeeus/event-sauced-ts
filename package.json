@@ -30,8 +30,7 @@
     "test": "nps test",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "prepush": "npm start prerequisites && npm start build",
-    "commitmsg": "validate-commit-msg"
+    "prepush": "npm start prerequisites && npm start build"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -117,6 +116,8 @@
   "dependencies": {},
   "husky": {
     "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-push": "npm start prerequisites && npm start build",
       "pre-commit": "lint-staged"
     }
   }
