@@ -37,9 +37,6 @@ jobs:
           name: Transpile and package up the library
           command: npm start build
       - run:
-          name: Sync coverage report
-          command: npm start coverage
-      - run:
           name: Generate Documentation pages and upload
           command: |
             if [ $CIRCLE_BRANCH == "master" ]
