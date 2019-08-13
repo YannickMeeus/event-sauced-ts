@@ -1,0 +1,40 @@
+name: Test, Package and Deploy
+
+on:
+  pull_request:
+      branches:
+        - master
+
+jobs:
+  verify-stability:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          version: 10
+      - name: Restore Dependencies
+        run: npm ci
+
+      - name: Run Linter
+        run:  npm start prerequisites.lint
+
+      - name: Run Test Suite
+        run: npm test
+  build-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          version: 10
+      - name: Restore Dependencies
+        run: npm ci
+
+      - name: Run Bundling prerequisites
+        run: npm start prerequisites.build
+
+      - name: Transpile and package up library bundle
+        run: npm start build
+
+
