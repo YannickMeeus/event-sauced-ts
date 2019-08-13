@@ -4,16 +4,13 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@master
-    
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - uses: actions/bin/filter@master
+      args: branch master
       
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: I'm now running a step only for master
+      run: echo I'm the master now!
+    
+    
