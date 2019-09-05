@@ -24,25 +24,11 @@ It might not look the prettiest, but I can guarantee it's at least a little bit 
 
 ## Install
 
-### Core library
-
 With [npm](https://npmjs.org/) installed, run
 
 ```sh
 npm install @make-stuff-work/event-sauced
 ```
-
-### Data Storage Engines
-
-With [npm](https://npmjs.org/) installed, run
-
-```sh
-npm install @make-stuff-work/event-sauced-cosmosdb
-npm install @make-stuff-work/event-sauced-postgresql
-npm install @make-stuff-work/event-sauced-dynamodb
-...
-```
-
 
 ## Usage
 
