@@ -21,23 +21,23 @@ jobs:
           version: 10.x
 
       - name: Install all dependencies
-        run: yarn install --frozen-lockfile --silent --link-duplicates
+        run: npm ci
 
       - name: Run linter
-        run: yarn start prerequisites.lint
+        run: npm start prerequisites.lint
 
       - name: Run All Tests
-        run: yarn test
+        run: npm test
 
       - name: Remove output folder if one exists
-        run: yarn start prerequisites.build
+        run: npm start prerequisites.build
 
       - name: Transpile and package up the library
-        run: yarn start build
+        run: npm start build
 
-      - name: Publish to Smartly.fury.io NPM registry
+      - name: Publish to NPM
         if: endsWith(github.ref, 'master')
-        run: yarn start publish
+        run: npm start publish
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
