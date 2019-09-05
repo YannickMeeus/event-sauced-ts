@@ -35,7 +35,7 @@ jobs:
       - name: Transpile and package up the library
         run: yarn start build
 
-      - name: Publish to Smartly.fury.io NPM registry
+      - name: Publish to NPM
         if: endsWith(github.ref, 'master')
         run: yarn start publish
         env:
