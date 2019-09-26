@@ -1,6 +1,12 @@
 name: Verify (Build & Test), Package and Deploy if applicable
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
