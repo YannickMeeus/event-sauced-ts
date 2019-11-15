@@ -24,7 +24,14 @@ jobs:
       - name: Set Node LTS
         uses: actions/setup-node@master
         with:
-          version: 10.x
+          version: 12.x
+
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install all dependencies
         run: npm ci
@@ -42,7 +49,7 @@ jobs:
         run: npm start build
 
       - name: Publish to NPM
-        if: endsWith(github.ref, 'master')
+        if: github.ref == 'refs/heads/master'
         run: npm start publish
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
