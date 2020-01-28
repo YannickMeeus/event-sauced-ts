@@ -95,7 +95,7 @@
     "nps-utils": "1.7.0",
     "prettier": "1.18.2",
     "prompt": "1.0.0",
-    "replace-in-file": "4.2.0",
+    "replace-in-file": "5.0.2",
     "rimraf": "3.0.0",
     "rollup": "1.30.0",
     "rollup-plugin-commonjs": "10.1.0",
