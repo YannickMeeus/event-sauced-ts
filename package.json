@@ -82,7 +82,7 @@
     "@types/uuid": "3.4.8",
     "colors": "1.4.0",
     "commitizen": "4.0.4",
-    "coveralls": "3.0.11",
+    "coveralls": "3.0.12",
     "cz-conventional-changelog": "3.1.0",
     "event-stream": "4.0.1",
     "greenkeeper-lockfile": "1.15.1",
