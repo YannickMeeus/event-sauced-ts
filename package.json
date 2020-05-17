@@ -79,7 +79,7 @@
   "devDependencies": {
     "@types/jest": "24.9.1",
     "@types/node": "12.12.39",
-    "@types/uuid": "3.4.9",
+    "@types/uuid": "7.0.3",
     "colors": "1.4.0",
     "commitizen": "4.1.2",
     "coveralls": "3.1.0",
