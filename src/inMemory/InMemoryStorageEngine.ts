@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { IStorageEngine } from '../IStorageEngine'
 import { ConcurrencyError } from '../errors/ConcurrencyError'
 import { EventStorage } from '../EventStorage'

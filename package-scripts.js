@@ -4,7 +4,10 @@ module.exports = {
   scripts: {
     prerequisites: {
       default: concurrently('prerequisites.lint', 'prerequisites.build'),
-      lint: "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts' -p .",
+      lint: {
+        default: "eslint 'src/**/*.ts' 'test/**/*.ts'",
+        fix: "eslint 'src/**/*.*' 'test/**/*.*' --fix"
+      },
       build: 'rimraf dist'
     },
     build: {

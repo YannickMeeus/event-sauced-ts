@@ -5,8 +5,10 @@ import { EventData } from './EventData'
  *
  */
 class EventStorage {
-  public eventBody: any
-  public metaData: any
+  public eventBody: unknown
+
+  public metaData: unknown
+
   public eventId: string
 
   constructor(
