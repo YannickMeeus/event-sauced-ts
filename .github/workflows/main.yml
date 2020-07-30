@@ -48,6 +48,12 @@ jobs:
       - name: Transpile and package up the library
         run: npm start build
 
+      - name: Check Publishing Status
+        if: github.ref != 'refs/heads/master'
+        run: npm start publish.dryrun
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish to NPM
         if: github.ref == 'refs/heads/master'
         run: npm start publish
