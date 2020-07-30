@@ -88,7 +88,7 @@
     "greenkeeper-lockfile": "1.15.1",
     "husky": "3.1.0",
     "jest": "24.9.0",
-    "lint-staged": "9.5.0",
+    "lint-staged": "10.2.11",
     "lodash": "4.17.19",
     "npm-check-updates": "4.1.2",
     "nps": "5.10.0",
