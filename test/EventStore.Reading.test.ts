@@ -9,7 +9,7 @@ import { OrderDispatched } from './Events/OrderDispatched'
 describe('Given a set of engines to test against', () => {
   const engineFactories: (() => IStorageEngine)[] = [() => new InMemoryStorageEngine()]
   const newGuid = () => uuid.v4()
-  engineFactories.forEach(getEngine => {
+  engineFactories.forEach((getEngine) => {
     const engine = getEngine()
 
     const getStore = async () => {
@@ -19,7 +19,7 @@ describe('Given a set of engines to test against', () => {
     describe('When reading any stream', () => {
       describe('And the stream id is dodgy', () => {
         const invalidStreamIds = [null, undefined, '', ' ']
-        invalidStreamIds.forEach(invalidStreamId => {
+        invalidStreamIds.forEach((invalidStreamId) => {
           it(`It should throw an error for stream id: '${invalidStreamId}'`, async () => {
             const sut = await getStore()
             try {
@@ -55,8 +55,8 @@ describe('Given a set of engines to test against', () => {
         const stream = await sut.readStreamForwards(streamId)
 
         expect(stream.length).toEqual(2)
-        expect(stream.shift()!.eventBody).toBeInstanceOf(OrderCreated)
-        expect(stream.shift()!.eventBody).toBeInstanceOf(OrderDispatched)
+        expect(stream.shift()?.eventBody).toBeInstanceOf(OrderCreated)
+        expect(stream.shift()?.eventBody).toBeInstanceOf(OrderDispatched)
       })
       it('It should return a subset of events', async () => {
         const streamId = newGuid()

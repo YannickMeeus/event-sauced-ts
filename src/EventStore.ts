@@ -60,7 +60,7 @@ class EventStore {
    */
   public readStreamForwards(
     streamId: string,
-    startPosition: number = 0,
+    startPosition = 0,
     numberOfEvents: number = Number.MAX_SAFE_INTEGER
   ): Promise<EventStorage[]> {
     // TODO: Change this to return eventData,

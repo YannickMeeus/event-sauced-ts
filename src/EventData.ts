@@ -20,8 +20,8 @@ class EventData {
    */
   constructor(
     public readonly eventId: string,
-    public readonly body: any,
-    public readonly metaData: any = undefined
+    public readonly body: unknown,
+    public readonly metaData: unknown = undefined
   ) {
     Guard.againstNull('body', body)
   }
