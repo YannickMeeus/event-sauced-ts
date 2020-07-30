@@ -29,8 +29,7 @@
   "license": "MIT",
   "lint-staged": {
     "{src,test}/**/*.ts": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "publishConfig": {
@@ -77,27 +76,27 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@types/jest": "24.9.1",
-    "@types/node": "12.12.53",
-    "@types/uuid": "3.4.9",
+    "@types/jest": "26.0.7",
+    "@types/node": "14.0.27",
+    "@types/uuid": "8.0.0",
     "colors": "1.4.0",
     "commitizen": "4.1.2",
     "coveralls": "3.1.0",
     "cz-conventional-changelog": "3.2.0",
     "event-stream": "4.0.1",
     "greenkeeper-lockfile": "1.15.1",
-    "husky": "3.1.0",
-    "jest": "24.9.0",
-    "lint-staged": "9.5.0",
+    "husky": "4.2.5",
+    "jest": "26.2.0",
+    "lint-staged": "10.2.11",
     "lodash": "4.17.19",
-    "npm-check-updates": "4.1.2",
+    "npm-check-updates": "7.0.2",
     "nps": "5.10.0",
     "nps-utils": "1.7.0",
-    "prettier": "1.19.1",
+    "prettier": "2.0.5",
     "prompt": "1.0.0",
     "replace-in-file": "6.1.0",
     "rimraf": "3.0.2",
-    "rollup": "1.32.1",
+    "rollup": "2.23.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-resolve": "5.2.0",
@@ -106,12 +105,12 @@
     "semantic-release": "17.1.1",
     "ts-jest": "26.1.4",
     "ts-node": "8.10.2",
-    "tslint": "5.20.1",
+    "tslint": "6.1.2",
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "9.0.0",
     "typedoc": "0.17.8",
     "typescript": "3.9.7",
-    "uuid": "3.4.0",
+    "uuid": "8.3.0",
     "validate-commit-msg": "2.14.0"
   },
   "dependencies": {},
