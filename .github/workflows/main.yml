@@ -1,4 +1,4 @@
-name: Verify (Build & Test), Package and Deploy if applicable
+name: Build & Publish
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Print GitHub Context # Debug step
         if: true == false
@@ -22,11 +22,11 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
 
       - name: Set Node LTS
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v2-beta
         with:
-          version: 12.x
+          node-version: 12.x
 
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -54,6 +54,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Publish to NPM
         if: github.ref == 'refs/heads/master'
         run: npm start publish
