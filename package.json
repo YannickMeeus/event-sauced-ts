@@ -79,7 +79,7 @@
   "devDependencies": {
     "@types/jest": "24.9.1",
     "@types/node": "12.12.53",
-    "@types/uuid": "3.4.9",
+    "@types/uuid": "8.0.0",
     "colors": "1.4.0",
     "commitizen": "4.1.2",
     "coveralls": "3.1.0",
@@ -111,7 +111,7 @@
     "tslint-config-standard": "9.0.0",
     "typedoc": "0.17.8",
     "typescript": "3.9.7",
-    "uuid": "3.4.0",
+    "uuid": "8.3.0",
     "validate-commit-msg": "2.14.0"
   },
   "dependencies": {},
