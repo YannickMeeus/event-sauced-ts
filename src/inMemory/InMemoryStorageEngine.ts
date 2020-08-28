@@ -39,6 +39,14 @@ class InMemoryStorageEngine implements IStorageEngine {
     return this.streams.get(streamId)!.slice(index, startPosition + numberOfEvents)
   }
 
+  async deleteStream(streamId: string): Promise<void> {
+    if (!this.streams.get(streamId)) {
+      return
+    }
+
+    this.streams.delete(streamId)
+  }
+
   public async initialise(): Promise<IStorageEngine> {
     return this
   }
