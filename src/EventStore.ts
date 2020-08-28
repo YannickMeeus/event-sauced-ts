@@ -71,6 +71,11 @@ class EventStore {
     Guard.againstNullOrEmpty('streamId', streamId)
     return this.engine.readStreamForwards(streamId, startPosition, numberOfEvents)
   }
+
+  public async deleteStream(streamId: string): Promise<void> {
+    Guard.againstNullOrEmpty('streamId', streamId)
+    return this.engine.deleteStream(streamId)
+  }
 }
 
 export { EventStore }

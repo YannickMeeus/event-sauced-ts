@@ -5,7 +5,7 @@ interface IStorageEngine {
    * Some storage engines require initialization. This can include:
    *  - Creating a new table/document collection to hold the streams
    *  - Adding constraints to aid in concurrency checks
-   *  - Adding indeces to facilitate efficient querying
+   *  - Adding indexes to facilitate efficient querying
    *  - Adding unique key constrains to ensure data integrity
    *  - Setting throughput requirements accordingly
    *  - Waiting for initialization is complete and the collection is writeable prior
@@ -56,12 +56,26 @@ interface IStorageEngine {
   ): Promise<EventStorage[]>
 
   /**
+   * Completely deletes an entire stream. This is a destructive operation, so please ensure
+   * this is what you want to achieve.
+   *
+   * If the stream is non-existent, the operation should be idem-potent and return
+   * a success. It should only throw in case deletion is impossible due to downstream failures.
+   *
+   * @param {string} streamIdT his is the core identifier for a single stream.
+   * It can be the natural unique key for an event type, such as a 'user id'.
+   * @returns {Promise<void>}
+   * @memberof IStorageEngine
+   */
+  deleteStream(streamId: string): Promise<void>
+
+  /**
    * Much like being initialized, the event store needs to be terminated gracefully
    * in the case of an expected shutdown, or during testing.
    *
    * There is no guarantee as to whether a particular engine requires this call,
    * so I'll leave that up to the consumer to figure out from the engine-specific
-   * documentation.
+   * documentation. If in doubt, terminate.
    *
    * @returns {Promise<void>}
    * @memberof IStorageEngine
