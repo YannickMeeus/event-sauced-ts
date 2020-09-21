@@ -13,7 +13,8 @@
   "scripts": {
     "start": "nps",
     "test": "nps test",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "main": "dist/event-sauced.umd.js",
   "module": "dist/event-sauced.es5.js",
@@ -33,7 +34,8 @@
     ]
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "config": {
     "commitizen": {
@@ -76,7 +78,7 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "semantic-release": "17.1.1",
+    "semantic-release": "^17.1.2",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.0",
     "@types/jest": "26.0.10",
@@ -119,7 +121,9 @@
     "uuid": "8.3.0",
     "validate-commit-msg": "2.14.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "semantic-release-cli": "^5.4.0"
+  },
   "husky": {
     "hooks": {
       "commit-msg": "validate-commit-msg",
