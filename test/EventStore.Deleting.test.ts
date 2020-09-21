@@ -43,8 +43,8 @@ describe('Given a set of engines to test against', () => {
         const firstEvent = new EventData(newGuid(), new OrderCreated(streamId))
         const secondEvent = new EventData(newGuid(), new OrderDispatched(streamId))
 
-        await sut.AppendToStream(streamId, 0, firstEvent)
-        await sut.AppendToStream(streamId, 1, secondEvent)
+        await sut.appendToStream(streamId, 0, firstEvent)
+        await sut.appendToStream(streamId, 1, secondEvent)
 
         const stream = await sut.readStreamForwards(streamId)
 

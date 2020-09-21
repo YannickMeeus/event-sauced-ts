@@ -26,7 +26,7 @@ class EventStore {
    * @returns {Promise<void>}
    * @memberof EventStore
    */
-  public AppendToStream(
+  public appendToStream(
     streamId: string,
     expectedVersion: number,
     ...events: EventData[]
