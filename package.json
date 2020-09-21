@@ -25,7 +25,7 @@
   "author": "Yannick Meeus <yannick.meeus@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YannickMeeus/event-sauced-ts"
+    "url": "https://github.com/Silly-Goose-Software/event-sauced-ts"
   },
   "license": "MIT",
   "lint-staged": {
