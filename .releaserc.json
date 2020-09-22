@@ -3,8 +3,17 @@
   "repositoryUrl": "https://github.com/Silly-Goose-Software/event-sauced-ts",
   "debug": "false",
   "plugins": [
-    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": [
+          {"type": "docs", "release": "patch"}
+        ]
+      }
+    ],
     "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
     "@semantic-release/npm",
     [
       "@semantic-release/changelog",
@@ -13,7 +22,7 @@
       }
     ],
     [
-      "@semantic-release/github",
+      "@semantic-release/git",
       {
         "assets": ["package.json", "package-lock.json", "CHANGELOG.md"],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
