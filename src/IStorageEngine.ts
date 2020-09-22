@@ -62,10 +62,11 @@ interface IStorageEngine {
    * If the stream is non-existent, the operation should be idem-potent and return
    * a success. It should only throw in case deletion is impossible due to downstream failures.
    *
-   * @param {string} streamIdT his is the core identifier for a single stream.
    * It can be the natural unique key for an event type, such as a 'user id'.
    * @returns {Promise<void>}
    * @memberof IStorageEngine
+   * @param streamId This is the core identifier for a single stream.
+   * It can be the natural unique key for an event type, such as a 'user id'.
    */
   deleteStream(streamId: string): Promise<void>
 
