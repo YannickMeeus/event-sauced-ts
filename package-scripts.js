@@ -25,14 +25,10 @@ module.exports = {
       dryrun: 'semantic-release --dry-run',
       prepare: 'ts-node tools/semantic-release-prepare.ts'
     },
-    coverage: {
-      default: series('coverage.generate', 'coverage.report'),
-      generate: 'jest --coverage --no-cache',
-      report: 'cat ./coverage/lcov.info | coveralls'
-    },
     default: 'rollup -c rollup.config.ts -w',
     test: {
       default: 'jest',
+      includeCoverage: 'jest --coverage',
       watch: 'jest --watch'
     },
     maintenance: {

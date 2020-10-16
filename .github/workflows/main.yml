@@ -40,7 +40,12 @@ jobs:
         run: npm start prerequisites.lint
 
       - name: Run All Tests
-        run: npm test
+        run: npm start test.includeCoverage
+
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Remove output folder if one exists
         run: npm start prerequisites.build
@@ -59,6 +64,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         run: npm start publish
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
