@@ -3,7 +3,7 @@
 > For when you need to store events... in a store... of some description
 
 ![Build & Publish](https://github.com/Silly-Goose-Software/event-sauced-ts/workflows/Build%20&%20Publish/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/event-sauced-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/event-sauced-ts?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Silly-Goose-Software/event-sauced-ts/badge.svg?branch=master)](https://coveralls.io/github/Silly-Goose-Software/event-sauced-ts?branch=master)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
