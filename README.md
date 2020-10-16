@@ -2,14 +2,16 @@
 
 > For when you need to store events... in a store... of some description
 
-![npm (scoped)](https://img.shields.io/npm/v/@make-stuff-work/event-sauced.svg)
+![Build & Publish](https://github.com/Silly-Goose-Software/event-sauced-ts/workflows/Build%20&%20Publish/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/YannickMeeus/event-sauced-ts/badge.svg?branch=master)](https://coveralls.io/github/YannickMeeus/event-sauced-ts?branch=master)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-This project started out as a re-implementation of [ASOS/SimpleEventStore](https://github.com/ASOS/SimpleEventStore) in TypeScript. What was initially just a simple re-write, is slowly becoming a more featured library.
+This project started out as a re-implementation of [ASOS/SimpleEventStore](https://github.com/ASOS/SimpleEventStore) in TypeScript.
+What was initially just a simple re-write, is slowly becoming a more featured library.
 
-The goal of Event-Sauced is to be provide a database-agnostic API for an event store. It will be slightly opinionated, but only to the point of provided the right abstraction over the various databases. It operates on a couple of premises:
+The goal of Event-Sauced is to be provide a database-agnostic API for an event store. It will be slightly opinionated,
+but only to the point of provided the right abstraction over the various databases. It operates on a couple of premises:
 
 - Be able to get going with only the core module and the included `InMemoryStorageEngine`
 - Be as modular as possible - no reason to pull down the `aws-sdk` if you are going to use PostgreSQL as a data engine
@@ -18,15 +20,16 @@ The goal of Event-Sauced is to be provide a database-agnostic API for an event s
 
 ## Documentation
 
-The documentation is currently hosted on GitHub pages, and can be found [here](https://yannickmeeus.github.io/event-sauced-ts/).
-It might not look the prettiest, but I can guarantee it's at least a little bit accurate.
+Currently there's no documentation. That went the way of the dodo after the Github Actions and organization move.
+I'm currently tracking adding documentation against [https://github.com/Silly-Goose-Software/event-sauced-ts/issues/411](#411),
+if you're interested.
 
 ## Install
 
 With [npm](https://npmjs.org/) installed, run
 
 ```sh
-npm install @make-stuff-work/event-sauced
+npm install @silly-goose-software/event-sauced-ts
 ```
 
 ## Usage
@@ -56,7 +59,7 @@ const eventStore = new e.EventStore(storageEngine);
   const secondEvent = {
     id: '3d5520a4-9977-4c1e-9052-52037165dfb6',
     type: 'AgeChanged',
-    newAge: 33
+    newAge: 35
   }
 
   const thirdEvent = {
@@ -87,7 +90,6 @@ const eventStore = new e.EventStore(storageEngine);
 })();
 
 ```
-
 
 ## License
 
