@@ -1,6 +1,6 @@
 {
   "name": "@silly-goose-software/event-sauced-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "keywords": [
     "Event Store",
@@ -123,8 +123,7 @@
     "validate-commit-msg": "2.14.0",
     "semantic-release-cli": "^5.4.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "husky": {
     "hooks": {
       "commit-msg": "validate-commit-msg",
