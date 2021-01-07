@@ -16,8 +16,9 @@ module.exports = {
       package: 'rollup -c rollup.config.ts'
     },
     documentation: {
+      clean: "rimraf docs",
       // https://medium.com/google-developers/improving-actions-on-google-reference-documentation-with-the-new-typedoc-neo-theme-7a9d58b52c4a
-      default: 'typedoc --out docs --target es6 --theme ./node_modules/typedoc-neo-theme/bin/default --mode file src',
+      default: 'typedoc --out docs src/index.ts',
     },
     publish: {
       default: 'semantic-release',
