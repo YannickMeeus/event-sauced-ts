@@ -1,0 +1,397 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>IStorageEngine | @silly-goose-software/event-sauced-ts</title>
+	<meta name="description" content="Documentation for @silly-goose-software/event-sauced-ts">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@silly-goose-software/event-sauced-ts</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@silly-goose-software/event-sauced-ts</a>
+				</li>
+				<li>
+					<a href="istorageengine.html">IStorageEngine</a>
+				</li>
+			</ul>
+			<h1>Interface IStorageEngine</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">IStorageEngine</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implemented by</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../classes/inmemorystorageengine.html" class="tsd-signature-type" data-tsd-kind="Class">InMemoryStorageEngine</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="istorageengine.html#appendtostream" class="tsd-kind-icon">append<wbr>ToStream</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="istorageengine.html#deletestream" class="tsd-kind-icon">delete<wbr>Stream</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="istorageengine.html#initialise" class="tsd-kind-icon">initialise</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="istorageengine.html#readstreamforwards" class="tsd-kind-icon">read<wbr>Stream<wbr>Forwards</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="istorageengine.html#terminate" class="tsd-kind-icon">terminate</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="appendtostream" class="tsd-anchor"></a>
+					<h3>append<wbr>ToStream</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">append<wbr>ToStream<span class="tsd-signature-symbol">(</span>streamId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, events<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventStorage</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Silly-Goose-Software/event-sauced-ts/blob/b19ae49/src/IStorageEngine.ts#L34">src/IStorageEngine.ts:34</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Append a number of events to a stream. Storage engine specific
+										concurrency checks will apply, to ensure streams maintain their
+									integrity.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>IStorageEngine</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>streamId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>This is the core identifier for a single stream.
+										It can be the natural unique key for an event type, such as a &#39;user id&#39;.</p>
+										<p>It can not be empty, null, undefined or any other crazy business.</p>
+									</div>
+								</li>
+								<li>
+									<h5>events: <span class="tsd-signature-type">EventStorage</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The list of events to append to a stream. Currently there
+										is no guard in place for passing in an empty array or nothing, so keep that in mind.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="deletestream" class="tsd-anchor"></a>
+					<h3>delete<wbr>Stream</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Stream<span class="tsd-signature-symbol">(</span>streamId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Silly-Goose-Software/event-sauced-ts/blob/b19ae49/src/IStorageEngine.ts#L71">src/IStorageEngine.ts:71</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Completely deletes an entire stream. This is a destructive operation, so please ensure
+									this is what you want to achieve.</p>
+								</div>
+								<p>If the stream is non-existent, the operation should be idem-potent and return
+								a success. It should only throw in case deletion is impossible due to downstream failures.</p>
+								<p>It can be the natural unique key for an event type, such as a &#39;user id&#39;.</p>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>IStorageEngine</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>streamId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>This is the core identifier for a single stream.
+										It can be the natural unique key for an event type, such as a &#39;user id&#39;.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="initialise" class="tsd-anchor"></a>
+					<h3>initialise</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">initialise<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="istorageengine.html" class="tsd-signature-type" data-tsd-kind="Interface">IStorageEngine</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Silly-Goose-Software/event-sauced-ts/blob/b19ae49/src/IStorageEngine.ts#L18">src/IStorageEngine.ts:18</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Some storage engines require initialization. This can include:</p>
+									<ul>
+										<li>Creating a new table/document collection to hold the streams</li>
+										<li>Adding constraints to aid in concurrency checks</li>
+										<li>Adding indexes to facilitate efficient querying</li>
+										<li>Adding unique key constrains to ensure data integrity</li>
+										<li>Setting throughput requirements accordingly</li>
+										<li>Waiting for initialization is complete and the collection is writeable prior
+										returning</li>
+									</ul>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>IStorageEngine</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="istorageengine.html" class="tsd-signature-type" data-tsd-kind="Interface">IStorageEngine</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The initialised storage engine is returned,
+								so that subsequent calls can be made directly against it. Usually this is not
+							a requirement but your mileage may vary.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="readstreamforwards" class="tsd-anchor"></a>
+					<h3>read<wbr>Stream<wbr>Forwards</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Stream<wbr>Forwards<span class="tsd-signature-symbol">(</span>streamId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, startPosition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, numberOfEvents<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventStorage</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Silly-Goose-Software/event-sauced-ts/blob/b19ae49/src/IStorageEngine.ts#L52">src/IStorageEngine.ts:52</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a list of events contained in a stream. It supports either
+										returning the entire stream, a subset of the stream from a starting position onwards
+									and a slice of the stream based on the starting position and the number of events.</p>
+								</div>
+								<p>If the stream is empty, an empty is array is returned. Currently no validation is applied
+									in any of the engines to verify the sensibility of your startPosition and numberOfEvents
+								parameters. If they make no sense, the results will make no sense.</p>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>IStorageEngine</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>streamId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>This is the core identifier for a single stream.
+										It can be the natural unique key for an event type, such as a &#39;user id&#39;.</p>
+									</div>
+								</li>
+								<li>
+									<h5>startPosition: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The position of the event you want to start reading
+										the stream for. TODO: Specify whether this is 0-based or 1-based.</p>
+									</div>
+								</li>
+								<li>
+									<h5>numberOfEvents: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The amount of events to pull out of the stream.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventStorage</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="terminate" class="tsd-anchor"></a>
+					<h3>terminate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">terminate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Silly-Goose-Software/event-sauced-ts/blob/b19ae49/src/IStorageEngine.ts#L84">src/IStorageEngine.ts:84</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Much like being initialized, the event store needs to be terminated gracefully
+									in the case of an expected shutdown, or during testing.</p>
+								</div>
+								<p>There is no guarantee as to whether a particular engine requires this call,
+									so I&#39;ll leave that up to the consumer to figure out from the engine-specific
+								documentation. If in doubt, terminate.</p>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>IStorageEngine</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="../classes/argumenterror.html" class="tsd-kind-icon">Argument<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/concurrencyerror.html" class="tsd-kind-icon">Concurrency<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/eventstore.html" class="tsd-kind-icon">Event<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/inmemorystorageengine.html" class="tsd-kind-icon">In<wbr>Memory<wbr>Storage<wbr>Engine</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="istorageengine.html" class="tsd-kind-icon">IStorage<wbr>Engine</a>
+						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="istorageengine.html#appendtostream" class="tsd-kind-icon">append<wbr>ToStream</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="istorageengine.html#deletestream" class="tsd-kind-icon">delete<wbr>Stream</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="istorageengine.html#initialise" class="tsd-kind-icon">initialise</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="istorageengine.html#readstreamforwards" class="tsd-kind-icon">read<wbr>Stream<wbr>Forwards</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="istorageengine.html#terminate" class="tsd-kind-icon">terminate</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#nullablestring" class="tsd-kind-icon">Nullable<wbr>String</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
