@@ -53,6 +53,9 @@ jobs:
       - name: Transpile and package up the library
         run: npm start build
 
+      - name: Generate documentation into /docs
+        run: npm start documentation
+
       - name: Check Publishing Status
         if: github.ref != 'refs/heads/master'
         run: npm start publish.dryrun
