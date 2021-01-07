@@ -1,7 +1,9 @@
 import { Guard } from './errors/Guard'
 
 /**
- * This class is your primary interaction data model with the EventStor itself.
+ * This class is your primary interaction data model with the EventStore itself.
+ * It is the envelope of data that is stored in the event store, and will be what
+ * any queries will return when reading a particular stream.
  *
  * @class EventData
  */
