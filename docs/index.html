@@ -1,0 +1,217 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@silly-goose-software/event-sauced-ts</title>
+	<meta name="description" content="Documentation for @silly-goose-software/event-sauced-ts">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@silly-goose-software/event-sauced-ts</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>Project @silly-goose-software/event-sauced-ts</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#event-sauced---slightly-opinionated-multi-database-event-store" id="event-sauced---slightly-opinionated-multi-database-event-store" style="color: inherit; text-decoration: none;">
+					<h1>Event-Sauced - Slightly opinionated multi-database Event Store</h1>
+				</a>
+				<blockquote>
+					<p>For when you need to store events... in a store... of some description</p>
+				</blockquote>
+				<p><img src="https://github.com/Silly-Goose-Software/event-sauced-ts/workflows/Build%20&%20Publish/badge.svg" alt="Build &amp; Publish">
+					<a href="https://coveralls.io/github/Silly-Goose-Software/event-sauced-ts?branch=master"><img src="https://coveralls.io/repos/github/Silly-Goose-Software/event-sauced-ts/badge.svg?branch=master" alt="Coverage Status"></a>
+					<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg" alt="styled with prettier"></a>
+				<a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a></p>
+				<p>This project started out as a re-implementation of <a href="https://github.com/ASOS/SimpleEventStore">ASOS/SimpleEventStore</a> in TypeScript.
+				What was initially just a simple re-write, is slowly becoming a more featured library.</p>
+				<p>The goal of Event-Sauced is to be provide a database-agnostic API for an event store. It will be slightly opinionated,
+				but only to the point of provided the right abstraction over the various databases. It operates on a couple of premises:</p>
+				<ul>
+					<li>Be able to get going with only the core module and the included <code>InMemoryStorageEngine</code></li>
+					<li>Be as modular as possible - no reason to pull down the <code>aws-sdk</code> if you are going to use PostgreSQL as a data engine</li>
+					<li>Allow users to implement - and inject - their own data engines if so desired</li>
+					<li>Provide data consistency and concurrency support in all supported engines</li>
+				</ul>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
+				<p>Currently there&#39;s no documentation. That went the way of the dodo after the Github Actions and organization move.
+					I&#39;m currently tracking adding documentation against <a href="#411">https://github.com/Silly-Goose-Software/event-sauced-ts/issues/411</a>,
+				if you&#39;re interested.</p>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h2>Install</h2>
+				</a>
+				<p>With <a href="https://npmjs.org/">npm</a> installed, run</p>
+				<pre><code class="language-sh"><span style="color: #000000">npm install @silly-goose-software/event-sauced-ts</span>
+</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-js"><span style="color: #008000">// const eventStore = require(&#039;event-sauced-ts.umd);</span>
+<span style="color: #008000">// or</span>
+<span style="color: #008000">// const {...} = require(event-sauced-ts.umd)</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">e</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;../../dist/event-sauced-ts.umd&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">toEventData</span><span style="color: #000000"> = (</span><span style="color: #001080">event</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">e</span><span style="color: #000000">.</span><span style="color: #267F99">EventData</span><span style="color: #000000">(</span><span style="color: #001080">event</span><span style="color: #000000">.</span><span style="color: #001080">id</span><span style="color: #000000">, </span><span style="color: #001080">event</span><span style="color: #000000">)</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">storageEngine</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">e</span><span style="color: #000000">.</span><span style="color: #267F99">InMemoryStorageEngine</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">eventStore</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">e</span><span style="color: #000000">.</span><span style="color: #267F99">EventStore</span><span style="color: #000000">(</span><span style="color: #001080">storageEngine</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">main</span><span style="color: #000000">() {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">streamId</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;d864da7d-c879-452d-9570-fbd1ce377b86&#039;</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">firstEvent</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">    </span><span style="color: #001080">id:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ba6945f4-04a6-44a9-9d93-936e49cb07d3&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;UserCreated&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">firstName:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Yannick&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">lastName:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Meeus&#039;</span>
+<span style="color: #000000">  };</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">secondEvent</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">    </span><span style="color: #001080">id:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;3d5520a4-9977-4c1e-9052-52037165dfb6&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;AgeChanged&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">newAge:</span><span style="color: #000000"> </span><span style="color: #098658">35</span>
+<span style="color: #000000">  }</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">thirdEvent</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">    </span><span style="color: #001080">id:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;7699c01f-25f9-4ab5-9f85-ac939693905e&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;JobChanged&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">newJob:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Superhero&#039;</span>
+<span style="color: #000000">  }</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">firstTwoEvents</span><span style="color: #000000"> = [</span><span style="color: #001080">firstEvent</span><span style="color: #000000">, </span><span style="color: #001080">secondEvent</span><span style="color: #000000">].</span><span style="color: #795E26">map</span><span style="color: #000000">(</span><span style="color: #001080">toEventData</span><span style="color: #000000">)</span>
+
+<span style="color: #000000">  </span><span style="color: #008000">// Add the first two events to the stream</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">eventStore</span><span style="color: #000000">.</span><span style="color: #795E26">AppendToStream</span><span style="color: #000000">(</span><span style="color: #001080">streamId</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, ...</span><span style="color: #001080">firstTwoEvents</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #008000">// Retrieve the full stream</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">currentStoredEventStream</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">eventStore</span><span style="color: #000000">.</span><span style="color: #795E26">readStreamForwards</span><span style="color: #000000">(</span><span style="color: #001080">streamId</span><span style="color: #000000">)</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">currentStoredEventStream</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #008000">// Add the third event to the stream, notice that we have to specify where we think we are in the stream.</span>
+<span style="color: #000000">  </span><span style="color: #008000">// This is our concurrency check, the engine will verify this but the reason we have to be in agreement</span>
+<span style="color: #000000">  </span><span style="color: #008000">// with the server is to ensure we do not get a corrupt stream.</span>
+<span style="color: #000000">  </span><span style="color: #008000">// In practice, this would be hidden away from the consumer in the repository or what-not, but I wanted</span>
+<span style="color: #000000">  </span><span style="color: #008000">// to keep that kind of complexity out of this.</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">eventStore</span><span style="color: #000000">.</span><span style="color: #795E26">AppendToStream</span><span style="color: #000000">(</span><span style="color: #001080">streamId</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #795E26">toEventData</span><span style="color: #000000">(</span><span style="color: #001080">thirdEvent</span><span style="color: #000000">))</span>
+
+<span style="color: #000000">  </span><span style="color: #008000">// Lo and behold, we now have a third event in the stream</span>
+<span style="color: #000000">  </span><span style="color: #001080">currentStoredEventStream</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">eventStore</span><span style="color: #000000">.</span><span style="color: #795E26">readStreamForwards</span><span style="color: #000000">(</span><span style="color: #001080">streamId</span><span style="color: #000000">)</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">currentStoredEventStream</span><span style="color: #000000">);</span>
+<span style="color: #000000">})();</span>
+
+</code></pre>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>MIT</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/argumenterror.html" class="tsd-kind-icon">Argument<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/concurrencyerror.html" class="tsd-kind-icon">Concurrency<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/eventstore.html" class="tsd-kind-icon">Event<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/inmemorystorageengine.html" class="tsd-kind-icon">In<wbr>Memory<wbr>Storage<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/istorageengine.html" class="tsd-kind-icon">IStorage<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#nullablestring" class="tsd-kind-icon">Nullable<wbr>String</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
