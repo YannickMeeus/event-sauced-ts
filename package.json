@@ -100,7 +100,7 @@
     "husky": "4.2.5",
     "jest": "26.4.2",
     "lint-staged": "10.2.13",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "npm-check-updates": "7.1.1",
     "nps": "5.10.0",
     "nps-utils": "1.7.0",
