@@ -1,0 +1,11 @@
+name: Get PR Stats
+on: workflow_dispatch
+
+jobs:
+  get-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run simple-pr-stats
+        uses: akwodkiewicz/simple-pr-stats@v0.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
