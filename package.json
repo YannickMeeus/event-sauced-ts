@@ -87,7 +87,7 @@
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
     "colors": "1.4.0",
-    "commitizen": "4.2.1",
+    "commitizen": "4.3.0",
     "coveralls": "3.1.0",
     "cz-conventional-changelog": "3.3.0",
     "dot-prop": "^4.2.1",
